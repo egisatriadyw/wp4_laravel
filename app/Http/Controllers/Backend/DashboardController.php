@@ -66,7 +66,7 @@ class DashboardController extends Controller
             $file       = $request->file('profile');
             $randomStr  = Str::random(30);
             $filename   = $randomStr . '.' . $file->getClientOriginalExtension();
-            $file->move('public/assets/imgs/', $filename);
+            $file->move('assets/imgs/', $filename);
             $insertRecord->profile = $filename;
         }
         $insertRecord->save();

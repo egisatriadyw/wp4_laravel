@@ -46,7 +46,7 @@ class PortfolioController extends Controller
         $file       = $request->file('image');
         $randomStr  = Str::random(30);
         $filename   = $randomStr . '.' . $file->getClientOriginalExtension();
-        $file->move('public/portfolio/', $filename);
+        $file->move('portfolio/', $filename);
         $insertRecord->image = $filename;
     }
     $insertRecord->save();
@@ -71,13 +71,13 @@ class PortfolioController extends Controller
         if(!empty($request->file('image')))
         {
 
-            if(!empty($updateRecord->image)&&file_exists('public/portfolio/'.$updateRecord->image)){
-                unlink('public/portfolio/'.$updateRecord->image);
+            if(!empty($updateRecord->image)&&file_exists('/portfolio/'.$updateRecord->image)){
+                unlink('portfolio/'.$updateRecord->image);
             }
             $file = $request->file('image');
             $randomStr = Str::random(30);
             $filename = $randomStr . '.' . $file->getClientOriginalExtension();
-            $file->move('public/portfolio/', $filename);
+            $file->move('portfolio/', $filename);
             $updateRecord->image = $filename;
         }
         $updateRecord->save();

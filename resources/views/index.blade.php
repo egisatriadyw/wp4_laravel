@@ -9,27 +9,27 @@
   <meta name="copyright" content="MACode ID, https://www.macodeid.com/">
 
   <title>Personal Portfolio Website</title>
-  <link href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
 
-  <link rel="shortcut icon" href="{{ url('public/assets/favicon.ico" type="image/x-icon') }}">
+  <link rel="shortcut icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon"/>
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets/css/themify-icons.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/themify-icons.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets/css/bootstrap.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }}">
 
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets/vendor/animate/animate.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/animate/animate.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets/vendor/owl-carousel/owl.carousel.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/owl-carousel/owl.carousel.css') }}">
   
-  <link rel="stylesheet" type="text/css" href=".{{ url('public/assets/vendor/perfect-scrollbar/css/perfect-scrollbar.css') }}">
+  <link rel="stylesheet" type="text/css" href=".{{ asset('assets/vendor/perfect-scrollbar/css/perfect-scrollbar.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets/vendor/nice-select/css/nice-select.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/nice-select/css/nice-select.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets/vendor/fancybox/css/jquery.fancybox.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/fancybox/css/jquery.fancybox.min.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets/css/virtual.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/virtual.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets/css/topbar.virtual.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/topbar.virtual.css') }}">
 
   
 </head>
@@ -126,7 +126,7 @@
       <div class="row">
         <div class="col-lg-4 py-3">
           <div class="img-place wow fadeInUp">
-            <img src="{{ url('public/assets/imgs/'.@$homeRecord[0]->profile) }}" alt="Photo Profile"></div>
+            <img src="{{ asset('/assets/imgs/'.@$homeRecord[0]->profile) }}" alt="Photo Profile"></div>
         </div>
         <div class="col-lg-6 offset-lg-1 wow fadeInRight">
           <h1 class="fw-light">{{ @$homeRecord[0]->your_name}}</h1>
@@ -214,8 +214,8 @@
       <div class="gridder my-3">
         @foreach($portfolioRecord as $value)
         <div class="grid-item apps wow zoomIn">
-          <div class="img-place" data-src="{{ url('public/portfolio/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
-            <img src="{{ url('public/portfolio/'.$value->image) }}"  alt="">
+          <div class="img-place" data-src="{{ asset('/portfolio/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
+            <img src="{{ asset('/portfolio/'.$value->image) }}"  alt="">
             <div class="img-caption">
               <h5 class="fg-theme">{{ $value->title }}</h5>
 
@@ -224,9 +224,8 @@
         </div>
         @endforeach
      </div>
-
-  </div> <!-- End Portfolio page -->
-
+    </div> 
+  </div> <!-- End Portfolio page -->             
 
   <!-- Galeri page -->
   <div class="vg-page page-galeri" id="galeri">
@@ -239,8 +238,8 @@
       <div class="gridder my-3">
         @foreach($galeriRecord as $value)
         <div class="grid-item apps wow zoomIn">
-          <div class="img-place" data-src="{{ url('public/galeri/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
-            <img src="{{ url('public/galeri/'.$value->image) }}"  alt="">
+          <div class="img-place" data-src="{{ asset('/galeri/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
+            <img src="{{ asset('/galeri/'.$value->image) }}"  alt="">
             <div class="img-caption">
               <h5 class="fg-theme">{{ $value->title }}</h5>
 
@@ -250,8 +249,8 @@
         @endforeach
      </div>
 
-  </div> <!-- End Galeri page -->
-
+    </div> 
+  </div> <!-- End Galeri page -->              
   <!-- Footer -->
   <div class="vg-footer">
     <h1 class="text-center">Personal Portfolio Website</h1>
@@ -282,35 +281,34 @@
         <div class="col-12">
           <p class="text-center mb-0 mt-4">Copyright &copy;2023. All right reserved | Personal Portfolio Website <span class="ti-heart fg-theme-red"></span></p>
         </div>
-      </div>
-    </div>
-  </div> <!-- End footer -->
+      </div> <!-- End footer -->
+    
   
 
 
-  <script src="{{ url('public/assets/js/jquery-3.5.1.min.js') }}"></script>
+  <script src="{{ asset('/assets/js/jquery-3.5.1.min.js') }}"></script>
     
-  <script src="{{ url('public/assets/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('/assets/js/bootstrap.bundle.min.js') }}"></script>
     
-  <script src="{{ url('public/assets/vendor/owl-carousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/owl-carousel/owl.carousel.min.js') }}"></script>
     
-  <script src="{{ url('public/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
     
-  <script src="{{ url('public/assets/vendor/isotope/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/isotope/isotope.pkgd.min.js') }}"></script>
     
-  <script src="{{ url('public/assets/vendor/nice-select/js/jquery.nice-select.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/nice-select/js/jquery.nice-select.min.js') }}"></script>
     
-  <script src="{{ url('public/assets/vendor/fancybox/js/jquery.fancybox.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/fancybox/js/jquery.fancybox.min.js') }}"></script>
 
-  <script src="{{ url('public/assets/vendor/wow/wow.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/wow/wow.min.js') }}"></script>
 
-  <script src="{{ url('public/assets/vendor/animateNumber/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/animateNumber/jquery.animateNumber.min.js') }}"></script>
 
-  <script src="{{ url('public/assets/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
 
-  <script src="{{ url('public/assets/js/google-maps.js') }}"></script>
+  <script src="{{ asset('/assets/js/google-maps.js') }}"></script>
     
-  <script src="{{ url('public/assets/js/topbar-virtual.js') }}"></script>
+  <script src="{{ asset('/assets/js/topbar-virtual.js') }}"></script>
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
   

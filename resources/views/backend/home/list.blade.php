@@ -45,7 +45,7 @@
                     <div class="col-sm-10">
                       <input type="file" name="profile" class="form-control">
                       @if(@$homeRecord[0]->profile)
-                      <img src="{{ url('public/assets/imgs/' .@$homeRecord[0]->profile) }}" width="200" height="200" />
+                      <img src="{{ asset('/assets/imgs/' .@$homeRecord[0]->profile) }}" width="200" height="200" />
                       @endif
                     </div>
                   </div>

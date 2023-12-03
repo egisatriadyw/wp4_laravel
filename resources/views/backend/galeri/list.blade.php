@@ -47,7 +47,7 @@
                       <td>
                         @if(!empty($value->image))
                           {{-- @if(file_exist(public_path('public/galeri/'.$value->image))) --}}
-                          <img src="{{ url('public/galeri/'.$value->image) }}" style="height: 80px; width: 80px;">
+                          <img src="{{ asset('/galeri/'.$value->image) }}" style="height: 80px; width: 80px;">
                           {{-- @endif --}}
                         @endif
                       </td>

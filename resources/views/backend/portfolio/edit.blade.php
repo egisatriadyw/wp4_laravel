@@ -59,7 +59,7 @@
                       <input type="file" name="image" class="form-control" required>
                       @if(!empty($portfolioRecord->image))
                       {{-- @if(file_exist(public_path('public/portfolio/'.$value->image))) --}}
-                      <img src="{{ url('public/portfolio/'.$portfolioRecord->image) }}" style="height: 80px; width: 80px;">
+                      <img src="{{ asset('/portfolio/'.$portfolioRecord->image) }}" style="height: 80px; width: 80px;">
                       {{-- @endif --}}
                     @endif
                     </div>
