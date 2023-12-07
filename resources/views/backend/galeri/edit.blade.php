@@ -47,7 +47,7 @@
                       <input type="file" name="image" class="form-control" required>
                       @if(!empty($galeriRecord->image))
                       {{-- @if(file_exist(public_path('public/galeri/'.$value->image))) --}}
-                      <img src="{{ url('public/galeri/'.$galeriRecord->image) }}" style="height: 80px; width: 80px;">
+                      <img src="{{ asset('storage/galeri/'.$galeriRecord->image) }}" style="height: 80px; width: 80px;">
                       {{-- @endif --}}
                     @endif
                     </div>
