@@ -6,14 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Str;
 
-use App\Models\education;
+use App\Models\Education;
 
 class EducationController extends Controller
 {
 
     public function admin_education(Request $request) 
     {
-        $data['educationRecord']= education::all();
+        $data['educationRecord']= Education::all();
         return view('backend.education.list',$data);
     }
     public function education_add(Request $request) 
@@ -24,7 +24,7 @@ class EducationController extends Controller
     public function education_add_post(Request $request) 
     {
 
-       $insertRecord = new education;
+       $insertRecord = new Education;
 
        $insertRecord->tingkat_pendidikan = trim($request->tingkat_pendidikan);
        $insertRecord->nama_instansi = trim($request->nama_instansi);
@@ -39,7 +39,7 @@ class EducationController extends Controller
     }
     public function admin_education_edit($id, Request $request)
     {
-        $data['educationRecord'] = education::find($id);
+        $data['educationRecord'] = Education::find($id);
         return view('backend.education.edit', $data);
     }
     
@@ -47,7 +47,7 @@ class EducationController extends Controller
     public function admin_education_edit_post($id, Request $request)
     {
         // dd($request->all());
-        $updateRecord = education::find($id);
+        $updateRecord = Education::find($id);
 
         $updateRecord->tingkat_pendidikan = trim($request->tingkat_pendidikan);
         $updateRecord->nama_instansi = trim($request->nama_instansi);

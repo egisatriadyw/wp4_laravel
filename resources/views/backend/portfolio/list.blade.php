@@ -50,7 +50,7 @@
                       <td>
                         @if(!empty($value->image))
                           {{-- @if(file_exist(public_path('public/portfolio/'.$value->image))) --}}
-                          <img src="{{ asset('/portfolio/'.$value->image) }}" style="height: 80px; width: 80px;">
+                          <img src="{{ asset('storage/portfolio/'.$value->image) }}" style="height: 80px; width: 80px;">
                           {{-- @endif --}}
                         @endif
                       </td>

@@ -11,25 +11,25 @@
   
   <title>Personal Portfolio Website</title>
   
-  <link rel="shortcut icon" type="image/x-icon" href="{{ url('public/assets2/favicon.ico') }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets2/favicon.ico') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets2/css/themify-icons.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets2/css/themify-icons.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets2/css/bootstrap.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets2/css/bootstrap.css') }}">
 
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets2/vendor/animate/animate.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets2/vendor/animate/animate.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets2/vendor/owl-carousel/owl.carousel.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets2/vendor/owl-carousel/owl.carousel.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets2/vendor/perfect-scrollbar/css/perfect-scrollbar.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets2/vendor/perfect-scrollbar/css/perfect-scrollbar.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets2/vendor/nice-select/css/nice-select.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets2/vendor/nice-select/css/nice-select.css') }}">
 
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets2/vendor/fancybox/css/jquery.fancybox.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets2/vendor/fancybox/css/jquery.fancybox.min.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets2/css/virtual.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets2/css/virtual.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ url('public/assets2/css/minibar.virtual.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets2/css/minibar.virtual.css') }}">
 </head>
 <body class="theme-red">
   
@@ -134,7 +134,7 @@
         
         <script>
           function redirectToIndex() {
-            window.location.href = '/personal_portfolio_website/';
+            window.location.href = '/';
           }
         </script>
       </ul>
@@ -142,7 +142,7 @@
   </div>
   
   <div class="vg-main-wrapper">
-    <div class="vg-page page-home" id="home" style="background-image:url('{{ asset('public/assets/img/bg_image_2.jpg') }}')">
+    <div class="vg-page page-home" id="home" style="background-image:url('{{ asset('assets/img/bg_image_2.jpg') }}')">
       <div class="caption wow zoomInUp">
         <h1 class="fw-normal">Welcome</h1>
         <h2 class="fw-medium fg-theme">{{ @$homeRecord[0]->your_name}}</h2>
@@ -157,7 +157,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="img-place wow zoomIn">
-              <img src="{{ url('public/assets/imgs/'.@$homeRecord[0]->profile) }}" alt="Photo Profile">
+              <img src="{{ asset('storage/imgs/'.@$homeRecord[0]->profile) }}" alt="Photo Profile">
             </div>
           </div>
           <div class="col-md-6">
@@ -177,24 +177,29 @@
           </div>
         </div>
       </div> <!-- End profile -->
-      <!-- Skills -->
-      <div class="container mt-5" id="skill">
-        <h1 class="text-center fg-dark wow fadeInUp">My Skills</h1>
-        <div class="row py-3">
-            <?php foreach ($skillRecord as $record): ?>
-                <div class="col-md-6">
-                    <div class="px-lg-3">
-                        <div class="progress-wrapper wow fadeInUp">
-                            <span class="caption"><?= $record->skill ?></span>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: <?= $record->percentage ?>%" aria-valuenow="<?= $record->percentage ?>" aria-valuemin="0" aria-valuemax="100"><?= $record->percentage ?>%</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-      </div> <!-- End skills -->
-      <!-- Resume -->
+    </div> <!-- End page about -->
+    
+    <!-- Skills -->
+    <div class="container mt-5" id="skill">
+      <h1 class="text-center fg-dark wow fadeInUp">My Skills</h1>
+      <div class="row py-3">
+          <?php foreach ($skillRecord as $record): ?>
+              <div class="col-md-6">
+                  <div class="px-lg-3">
+                      <div class="progress-wrapper wow fadeInUp">
+                          <span class="caption"><?= $record->skill ?></span>
+                          <div class="progress">
+                              <div class="progress-bar" role="progressbar" style="width: <?= $record->percentage ?>%" aria-valuenow="<?= $record->percentage ?>" aria-valuemin="0" aria-valuemax="100"><?= $record->percentage ?>%</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          <?php endforeach; ?>
+        </div>
+    </div> 
+    <!-- End skills -->
+
+    <!-- Resume -->
       <div class="container pt-5" id="education">
         <div class="row">
           <div class="col-md-6 wow fadeInRight">
@@ -255,8 +260,6 @@
           </div>
         </div>
       </div> <!-- End resume -->
-    </div> <!-- End page about -->
-    
 
 
     <!-- Portfolio page -->
@@ -270,8 +273,8 @@
         <div class="gridder my-3">
           @foreach($portfolioRecord as $value)
           <div class="grid-item apps wow zoomIn">
-            <div class="img-place" data-src="{{ url('public/portfolio/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
-              <img src="{{ url('public/portfolio/'.$value->image) }}"  alt="">
+            <div class="img-place" data-src="{{ asset('storage/portfolio/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
+              <img src="{{ asset('storage/portfolio/'.$value->image) }}"  alt="">
               <div class="img-caption">
                 <h5 class="fg-theme">{{ $value->title }}</h5>
   
@@ -280,11 +283,13 @@
           </div>
           @endforeach
        </div>
-  
+       </div>
     </div> <!-- End Portfolio page -->
     
     <!-- Galeri page -->
-    <div class="vg-page page-galeri" id="galeri">
+
+    
+  <div class="vg-page page-galeri" id="galeri">
       <div class="container">
         <div class="text-center wow fadeInUp">
           <div class="badge badge-subhead">Galeri</div>
@@ -294,8 +299,8 @@
         <div class="gridder my-3">
           @foreach($galeriRecord as $value)
           <div class="grid-item apps wow zoomIn">
-            <div class="img-place" data-src="{{ url('public/galeri/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
-              <img src="{{ url('public/galeri/'.$value->image) }}"  alt="">
+            <div class="img-place" data-src="{{ asset('storage/galeri/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
+              <img src="{{ asset('storage/galeri/'.$value->image) }}"  alt="">
               <div class="img-caption">
                 <h5 class="fg-theme">{{ $value->title }}</h5>
   
@@ -304,10 +309,8 @@
           </div>
           @endforeach
        </div>
-  
-    </div> <!-- End Galeri page -->
-    
-
+    </div> 
+  </div> <!-- End Galeri page -->
   <!-- Footer -->
   <div class="vg-footer">
     <h1 class="text-center">Personal Portfolio Website</h1>
@@ -343,29 +346,29 @@
   </div> <!-- End footer -->
   
   
-  <script src="{{ url('public/assets2/js/jquery-3.5.1.min.js') }}"></script>
+  <script src="{{ asset('assets2/js/jquery-3.5.1.min.js') }}"></script>
   
-  <script src="{{ url('public/assets2/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets2/js/bootstrap.bundle.min.js') }}"></script>
   
-  <script src="{{ url('public/assets2/vendor/owl-carousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/owl-carousel/owl.carousel.min.js') }}"></script>
   
-  <script src="{{ url('public/assets2/vendor/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
   
-  <script src="{{ url('public/assets2/vendor/isotope/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/isotope/isotope.pkgd.min.js') }}"></script>
   
-  <script src="{{ url('public/assets2/vendor/nice-select/js/jquery.nice-select.min.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/nice-select/js/jquery.nice-select.min.js') }}"></script>
   
-  <script src="{{ url('public/assets2/vendor/fancybox/js/jquery.fancybox.min.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/fancybox/js/jquery.fancybox.min.js') }}"></script>
 
-  <script src="{{ url('public/assets2/vendor/wow/wow.min.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/wow/wow.min.js') }}"></script>
 
-  <script src="{{ url('public/assets2/vendor/animateNumber/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/animateNumber/jquery.animateNumber.min.js') }}"></script>
 
-  <script src="{{ url('public/assets2/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ asset('assets2/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
   
-  <script src="{{ url('public/assets2/js/google-maps.js') }}"></script>
+  <script src="{{ asset('assets2/js/google-maps.js') }}"></script>
   
-  <script src="{{ url('public/assets2/js/minibar-virtual.js') }}"></script>
+  <script src="{{ asset('assets2/js/minibar-virtual.js') }}"></script>
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
 

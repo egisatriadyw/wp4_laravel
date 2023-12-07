@@ -102,7 +102,7 @@
             
             <script>
               function redirectToIndex2() {
-                window.location.href = '/personal_portfolio_website/index2';
+                window.location.href = '/index';
               }
             </script>
             
@@ -126,7 +126,7 @@
       <div class="row">
         <div class="col-lg-4 py-3">
           <div class="img-place wow fadeInUp">
-            <img src="{{ asset('/assets/imgs/'.@$homeRecord[0]->profile) }}" alt="Photo Profile"></div>
+            <img src="{{ asset('storage/imgs/'.@$homeRecord[0]->profile) }}" alt="Photo Profile"></div>
         </div>
         <div class="col-lg-6 offset-lg-1 wow fadeInRight">
           <h1 class="fw-light">{{ @$homeRecord[0]->your_name}}</h1>
@@ -214,8 +214,8 @@
       <div class="gridder my-3">
         @foreach($portfolioRecord as $value)
         <div class="grid-item apps wow zoomIn">
-          <div class="img-place" data-src="{{ asset('/portfolio/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
-            <img src="{{ asset('/portfolio/'.$value->image) }}"  alt="">
+          <div class="img-place" data-src="{{ asset('storage/portfolio/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
+            <img src="{{ asset('storage/portfolio/'.$value->image) }}"  alt="">
             <div class="img-caption">
               <h5 class="fg-theme">{{ $value->title }}</h5>
 
@@ -238,8 +238,8 @@
       <div class="gridder my-3">
         @foreach($galeriRecord as $value)
         <div class="grid-item apps wow zoomIn">
-          <div class="img-place" data-src="{{ asset('/galeri/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
-            <img src="{{ asset('/galeri/'.$value->image) }}"  alt="">
+          <div class="img-place" data-src="{{ asset('storage/galeri/'.$value->image) }}" data-fancybox data-caption="<h5 class='fg-theme'>{{ $value->title }}</h5>">
+            <img src="{{ asset('storage/galeri/'.$value->image) }}"  alt="">
             <div class="img-caption">
               <h5 class="fg-theme">{{ $value->title }}</h5>
 

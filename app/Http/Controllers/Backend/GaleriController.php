@@ -46,7 +46,7 @@ class GaleriController extends Controller
         $file       = $request->file('image');
         $randomStr  = Str::random(30);
         $filename   = $randomStr . '.' . $file->getClientOriginalExtension();
-        $file->move('public/galeri/', $filename);
+        $file->storeAs('public/galeri', $filename);
         $insertRecord->image = $filename;
     }
     $insertRecord->save();
@@ -72,13 +72,13 @@ class GaleriController extends Controller
         if(!empty($request->file('image')))
         {
 
-            if(!empty($updateRecord->image)&&file_exists('public/galeri/'.$updateRecord->image)){
-                unlink('public/galeri/'.$updateRecord->image);
+            if(!empty($updateRecord->image)&&file_exists('public/storage/galeri/'.$updateRecord->image)){
+                unlink('public/storage/galeri/'.$updateRecord->image);
             }
             $file = $request->file('image');
             $randomStr = Str::random(30);
             $filename = $randomStr . '.' . $file->getClientOriginalExtension();
-            $file->move('public/galeri/', $filename);
+            $file->storeAs('public/galeri', $filename);
             $updateRecord->image = $filename;
         }
         $updateRecord->save();

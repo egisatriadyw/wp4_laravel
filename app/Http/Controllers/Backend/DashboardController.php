@@ -59,14 +59,14 @@ class DashboardController extends Controller
 
         if (!empty($request->file('profile'))) {
 
-            if (!empty($insertRecord->profile) && file_exists('public/assets/imgs/'. $insertRecord->profile)) {
-                unlink('public/assets/imgs/'. $insertRecord->profile);
+            if (!empty($insertRecord->profile) && file_exists('public/storage/imgs/'. $insertRecord->profile)) {
+                unlink('public/storage/imgs/'. $insertRecord->profile);
             }
 
             $file       = $request->file('profile');
             $randomStr  = Str::random(30);
             $filename   = $randomStr . '.' . $file->getClientOriginalExtension();
-            $file->move('assets/imgs/', $filename);
+            $file->storeAs('public/imgs/', $filename);
             $insertRecord->profile = $filename;
         }
         $insertRecord->save();

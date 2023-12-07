@@ -31,7 +31,7 @@ Route::get('/', function () {
 
 Route::get('/',[HomeController::class, 'index']);
 
-Route::get('/index2', [Index2Controller::class, 'index2']);
+Route::get('/index', [Index2Controller::class, 'index2']);
 
 // Route::get('about',[HomeController::class, 'about']);
 
