@@ -12,7 +12,7 @@
     <div class="resume-your-name-background">
       <div class="resume-your-name-box_box_058box_048049050x">
         <div class="resume-your-name-box_058box_048049x">
-          <div class="resume-your-name-photo"><img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents(public_path('assets/imgs/' . $homeRecord[0]->profile))) }}" alt=""></div>
+          <div class="resume-your-name-photo"><img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents(storage_path('app/public/imgs/' . $homeRecord[0]->profile))) }}" alt=""></div>
             <div class="resume-your-name-box_048049x">
               <p class="resume-your-name-name">{{ @$homeRecord[0]->your_name}}</p>
               <p class="resume-your-name-position">{{ @$homeRecord[0]->work_experience}}</p>
