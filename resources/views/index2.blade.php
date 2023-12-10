@@ -205,58 +205,33 @@
           <div class="col-md-6 wow fadeInRight">
             <h2 class="fg-dark">Education</h2>
             <ul class="timeline mt-4 pr-md-5">
-            <li>
-              <div class="title">{{ @$educationRecord[0]->tahun_masuk}} - {{ @$educationRecord[0]->tahun_lulus}}</div>
-              <div class="details">
-                <h5>{{ @$educationRecord[0]->tingkat_pendidikan}}</h5>
-                <small class="fg-theme">{{ @$educationRecord[0]->nama_instansi}}</small>
-              </div>
-            </li>
-            <li>
-              <div class="title">{{ @$educationRecord[3]->tahun_masuk}} - {{ @$educationRecord[3]->tahun_lulus}}</div>
-              <div class="details">
-                <h5>{{ @$educationRecord[3]->tingkat_pendidikan}}</h5>
-                <small class="fg-theme">{{ @$educationRecord[3]->nama_instansi}}</small>
-              </div>
-            </li>
-
-            <li>
-              <div class="title">{{ @$educationRecord[2]->tahun_masuk}} - {{ @$educationRecord[2]->tahun_lulus}}</div>
-              <div class="details">
-                <h5>{{ @$educationRecord[2]->tingkat_pendidikan}}</h5>
-                <small class="fg-theme">{{ @$educationRecord[2]->nama_instansi}}</small>
-              </div>
-            </li>
-            </ul>
+              <?php foreach ($educationRecord as $record): ?>
+                  <li>
+                      <div class="title"><?= $record->tahun_masuk ?> - <?= $record->tahun_lulus ?></div>
+                      <div class="details">
+                          <h5><?= $record->tingkat_pendidikan ?></h5>
+                          <small class="fg-theme"><?= $record->nama_instansi ?></small>
+                      </div>
+                  </li>
+              <?php endforeach; ?>
+          </ul>
           </div>
           <div class="col-md-6 wow fadeInRight" data-wow-delay="200ms" id="experience">
             <h2 class="fw-normal">Experience</h2>
             <ul class="timeline mt-4 pr-md-5">
-              <li>
-                <div class="title">{{ @$experienceRecord[0]->periode}}</div>
-                <div class="details">
-                  <h5>{{ @$experienceRecord[0]->organisasi}}</h5>
-                  <small class="fg-theme">{{ @$experienceRecord[0]->jabatan}} {{ @$experienceRecord[0]->bidang}} </small>
-                  <p>{{ @$experienceRecord[0]->keterangan}}</p>
-                </div>
-              </li>
-              <li>
-                <div class="title">{{ @$experienceRecord[1]->periode}}</div>
-                <div class="details">
-                  <h5>{{ @$experienceRecord[1]->organisasi}}</h5>
-                  <small class="fg-theme">{{ @$experienceRecord[1]->jabatan}} {{ @$experienceRecord[1]->bidang}} </small>
-                  <p>{{ @$experienceRecord[1]->keterangan}}</p>
-                </div>
-              </li>
-              <li>
-                <div class="title">{{ @$experienceRecord[2]->periode}}</div>
-                <div class="details">
-                  <h5>{{ @$experienceRecord[2]->organisasi}}</h5>
-                  <small class="fg-theme">{{ @$experienceRecord[2]->jabatan}} {{ @$experienceRecord[2]->bidang}} </small>
-                  <p>{{ @$experienceRecord[2]->keterangan}}</p>
-                </div>
-              </li>
-            </ul>
+
+              <?php foreach ($experienceRecord as $record): ?>
+                  <li>
+                      <div class="title"><?= $record->periode ?></div>
+                      <div class="details">
+                          <h5><?= $record->organisasi ?></h5>
+                          <small class="fg-theme"><?= $record->jabatan ?> <?= $record->bidang ?> </small>
+                          <p><?= $record->keterangan ?></p>
+                      </div>
+                  </li>
+              <?php endforeach; ?>
+
+          </ul>
           </div>
         </div>
       </div> <!-- End resume -->
